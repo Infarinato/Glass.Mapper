@@ -15,7 +15,7 @@ namespace Glass.Mapper.Tests
         [TestCase("http://glass.co/test/somevalue?test=value&test1=another&test=value3", "http://glass.co/test/somevalue?test=value&test1=another&test=value3")]
         [TestCase("http://glass.co/test/somevalue?test=value&test1=another&test=value3&", "http://glass.co/test/somevalue?test=value&test1=another&test=value3")]
         [TestCase(null, "")]
-        [TestCase("http://glass.co/test/somevalue?test=value&test1=", "http://glass.co/test/somevalue?test=value&test1=")]
+        [TestCase("http://glass.co/test/somevalue?test=value&test1=", "http://glass.co/test/somevalue?test=value&test1")]
         [TestCase("http://glass.co/test/somevalue?test=value&=another&test=value3", "http://glass.co/test/somevalue?test=value&test=value3")]
        public void UrlBuilder_TestUrlShouldRemainTheSame_NoAdditionalQueryParameters(string url, string expected)
         {
@@ -34,7 +34,7 @@ namespace Glass.Mapper.Tests
         [TestCase("http://glass.co/test/somevalue?test=value&test1=another&test=value3", "http://glass.co/test/somevalue?test=value&test1=another&test=value3&k1=v1&v2=k2", "?k1=v1&v2=k2")]
         [TestCase("http://glass.co/test/somevalue?test=value&test1=another&test=value3&", "http://glass.co/test/somevalue?test=value&test1=another&test=value3&k1=v1&v2=k2", "?k1=v1&v2=k2")]
         [TestCase(null, "?k1=v1&v2=k2", "?k1=v1&v2=k2")]
-        [TestCase("http://glass.co/test/somevalue?test=value&test1=", "http://glass.co/test/somevalue?test=value&test1=&k1=v1&v2=k2", "?k1=v1&v2=k2")]
+        [TestCase("http://glass.co/test/somevalue?test=value&test1=", "http://glass.co/test/somevalue?test=value&test1&k1=v1&v2=k2", "?k1=v1&v2=k2")]
         [TestCase("http://glass.co/test/somevalue?test=value&=another&test=value3", "http://glass.co/test/somevalue?test=value&test=value3&k1=v1&v2=k2", "?k1=v1&v2=k2")]
         public void AddToQueryString_AddsCompleteString_ReturnsValueUrl(string url, string expected, string query)
         {

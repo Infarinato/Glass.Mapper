@@ -19,7 +19,7 @@ using Sitecore.FakeDb;
 using Sitecore.Resources.Media;
 using Sitecore.SecurityModel;
 
-#if SC90 || SC91 || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104
+#if SC90 || SC91 || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104 || SC105
 using Sitecore.Abstractions;
 using Sitecore.DependencyInjection;
 #endif
@@ -42,7 +42,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
         [TestCase(SitecoreInfoType.Name, "TestItem")]
         [TestCase(SitecoreInfoType.Path, "/sitecore/content/TestItem")]
         [TestCase(SitecoreInfoType.TemplateName, "TestTemplate")]
-        [TestCase(SitecoreInfoType.Url, "/en/sitecore/content/TestItem.aspx")]
+        [TestCase(SitecoreInfoType.Url, "/en/sitecore/content/TestItem")]
         [TestCase(SitecoreInfoType.Version, 1)]
         public void MapToProperty_SitecoreInfoType_GetsExpectedValueFromSitecore(
             SitecoreInfoType type, object expected
@@ -70,7 +70,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
             })
             {
 
-#if SC90 || SC91 || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104
+#if SC90 || SC91 || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104 || SC105
 
                 var mediaUrlProvider = Substitute.For<BaseMediaManager>();
 
@@ -108,7 +108,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
         {
             //Assign
             var type = SitecoreInfoType.Url;
-            string expected = "/en/sitecore/content/TestItem.aspx";
+            string expected = "/en/sitecore/content/TestItem";
 
             var mapper = new SitecoreInfoMapper();
             var config = new SitecoreInfoConfiguration();
@@ -156,7 +156,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
         {
             //Assign
             var type = SitecoreInfoType.Url;
-            string expected = "/fr-FR/sitecore/content/this is a display name.aspx";
+            string expected = "/fr-FR/sitecore/content/this is a display name";
 
             var mapper = new SitecoreInfoMapper();
             var config = new SitecoreInfoConfiguration();
@@ -207,7 +207,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
         {
             //Assign
             var type = SitecoreInfoType.Url;
-            string expected = "/fr-FR/sitecore/content/TestItem.aspx";
+            string expected = "/fr-FR/sitecore/content/TestItem";
 
             var mapper = new SitecoreInfoMapper();
             var config = new SitecoreInfoConfiguration();
@@ -298,7 +298,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
                 };
 
 
-#if SC90 || SC91 || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104
+#if SC90 || SC91 || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104 || SC105
 
                 var mediaUrlProvider = Substitute.For<BaseMediaManager>();
 

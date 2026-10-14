@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#if SC90 || SC91  || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104
+#if SC90 || SC91  || SC92  || SC93 || SC100 || SC101 || SC102 || SC103 || SC104 || SC105
 using Sitecore.Abstractions;
 using Sitecore.DependencyInjection;
 #endif
@@ -18,7 +18,7 @@ namespace Glass.Mapper.Sc
 {
     public class SitecoreVersionAbstractions
     {
-#if SC90 || SC91 || SC92 || SC93 || SC100 || SC101 || SC102 || SC103 || SC104
+#if SC90 || SC91 || SC92 || SC93 || SC100 || SC101 || SC102 || SC103 || SC104 || SC105
 
         internal static LazyResetable<BaseMediaManager> MediaManager = ServiceLocator.GetRequiredResetableService<BaseMediaManager>();
         internal static LazyResetable<BaseLinkManager> LinkManager = ServiceLocator.GetRequiredResetableService<BaseLinkManager>();
@@ -34,7 +34,7 @@ namespace Glass.Mapper.Sc
 
         public static string GetItemUrl(Item item, UrlOptions urlOptions)
         {
-#if SC104
+#if SC104 || SC105
             if (item?.Paths == null || (!item.Paths.IsFullyQualified && item.Parent == null)) return string.Empty;
             var paths = item.Paths.GetPathParts(urlOptions?.UseDisplayName == true ? ItemPathType.DisplayName : ItemPathType.Name);
             if (paths == null || paths.Length == 0)

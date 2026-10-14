@@ -10,7 +10,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <RestorePackages>true</RestorePackages>
-   <Configurations>Debug;Release;sc100;sc93;sc92;sc91;sc90;sc82;sc81;sc80;sc75;sc72;sc71;sc70;sc101;sc102;Sc103;Sc104</Configurations>
+   <Configurations>Debug;Release;sc100;sc93;sc92;sc91;sc90;sc82;sc81;sc80;sc75;sc72;sc71;sc70;sc101;sc102;Sc103;Sc104;Sc105</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +22,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Sc104|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Sc105|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -51,12 +60,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Sitecore.FakeDb" Version="$(ScFakeDBVersion)" />
-		<PackageReference Include="Sitecore.FakeDb.NSubstitute" Version="$(ScFakeDBVersion)" />
+    <PackageReference Include="EnterpriseLibrary.Common" Version="6.0.1304" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.1" />
+    <PackageReference Include="Sitecore.FakeDb" Version="$(ScFakeDBVersion)" />
+    <PackageReference Include="Sitecore.FakeDb.NSubstitute" Version="$(ScFakeDBVersion)" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.7" />
+    <PackageReference Include="System.Text.Json" Version="10.0.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Sitecore.Kernel" Version="$(ScVersion)" />
-    <PackageReference Include="Sitecore.Nexus" Version="$(ScVersion)" Condition="'$(ScVersion)' != '10.2.0' and '$(ScVersion)' != '10.3.0' and '$(ScVersion)' != '10.4.0'" />
+    <PackageReference Include="Sitecore.Nexus" Version="$(ScVersion)" Condition="'$(ScVersion)' != '10.2.0' and '$(ScVersion)' != '10.3.0' and '$(ScVersion)' != '10.4.0' and '$(ScVersion)' != '10.5.0'" />
 		<PackageReference Include="Sitecore.Analytics" Version="$(ScVersion)" />
 		<PackageReference Include="Sitecore.Client" Version="$(ScVersion)" />
 	</ItemGroup>
