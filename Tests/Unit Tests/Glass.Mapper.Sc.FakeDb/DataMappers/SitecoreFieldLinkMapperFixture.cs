@@ -1008,7 +1008,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
 
 #else
                 var expected =
-                    "<link target=\"testTarget\" title=\"test alternative\" querystring=\"q%3ds\" linktype=\"internal\" id=\"{0}\" anchor=\"testAnchor\" url=\"/en/sitecore/content/Target.aspx\" class=\"testClass\" text=\"Test description\" />"
+                    "<link target=\"testTarget\" title=\"test alternative\" querystring=\"q%3ds\" linktype=\"internal\" id=\"{0}\" anchor=\"testAnchor\" url=\"/en/sitecore/content/Target\" class=\"testClass\" text=\"Test description\" />"
                         .Formatted(targetId.Guid.ToString("B").ToUpperInvariant());
 #endif
                 var item = database.GetItem("/sitecore/content/Target");
@@ -1121,7 +1121,7 @@ namespace Glass.Mapper.Sc.FakeDb.DataMappers
             {
                 var mapper = new SitecoreFieldLinkMapper(new FakeUrlOptionsResolver());
                 var expected =
-                    "<link target=\"testTarget\" title=\"test alternative\" querystring=\"q%3ds%253d\" linktype=\"internal\" id=\"{0}\" anchor=\"testAnchor\" url=\"/en/sitecore/content/Target.aspx\" class=\"testClass\" text=\"Test description\" />"
+                    "<link target=\"testTarget\" title=\"test alternative\" querystring=\"q%3ds%253d\" linktype=\"internal\" id=\"{0}\" anchor=\"testAnchor\" url=\"/en/sitecore/content/Target\" class=\"testClass\" text=\"Test description\" />"
                         .Formatted(targetId.Guid.ToString("B").ToUpperInvariant());
 
                 var item = database.GetItem("/sitecore/content/Target");

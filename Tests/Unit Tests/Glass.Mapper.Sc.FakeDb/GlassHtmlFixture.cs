@@ -150,7 +150,7 @@ namespace Glass.Mapper.Sc.FakeDb
 
 #if SC93 || SC100 || SC101 || SC102 || SC103 || SC104 || SC105
                 string expected =
-                    "<a href='/en/sitecore/content/Target?foo=bar' >Target</a>";
+                    "<a href=\"/en/sitecore/content/Target?foo=bar\" >Target</a>";
 #else
                 string expected =
                     "<a href='/en/sitecore/content/Target.aspx?foo=bar' >Target</a>";

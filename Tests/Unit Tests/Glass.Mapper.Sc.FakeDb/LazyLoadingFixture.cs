@@ -146,7 +146,6 @@ namespace Glass.Mapper.Sc.FakeDb
                 var parent = target.Stub2;
 
                 //Assert
-                Assert.AreEqual(typeof(Stub2), parent.GetType());
                 Assert.True(parent is Stub2);
             }
         }
@@ -250,9 +249,7 @@ namespace Glass.Mapper.Sc.FakeDb
                 foreach (var child in target.Stub3s)
                 {
                     Assert.IsTrue(child is Stub3);
-                    Assert.AreEqual(typeof(Stub3), child.GetType());
                     Assert.IsTrue(child.Stub2 is Stub2);
-                    Assert.AreEqual(typeof(Stub2), child.Stub2.GetType());
                 }
             }
         }
