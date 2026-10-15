@@ -17,8 +17,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@master
-      
-       - name: Dotnet build Sitecore v10.4.0
+
+      - name: Dotnet build Sitecore v10.5.0
+        run: dotnet build Glass.Mapper.sln --packages .\NuGetv105 --configfile .nuget\NuGet.Config -p:ScVersion=10.5.0
+
+      - name: Dotnet build Sitecore v10.4.0
         run: dotnet build Glass.Mapper.sln --packages .\NuGetv104 --configfile .nuget\NuGet.Config -p:ScVersion=10.4.0
 
       - name: Dotnet build Sitecore v10.3.0
@@ -53,4 +56,3 @@ jobs:
       
       - name: Dotnet build Sitecore v8.0
         run: dotnet build Glass.Mapper.sln --packages .\NuGetv80 --configfile .nuget\NuGet.Config -p:ScVersion=8.0.160115
-      
